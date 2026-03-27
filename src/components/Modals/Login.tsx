@@ -1,5 +1,5 @@
 import { authModalState } from '@/atoms/authModalAtom';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '@/firebase/firebase';
@@ -38,7 +38,11 @@ const Login:React.FC<LoginProps> = () => {
             alert(error.message)
         }
     }
-    console.log(newUser, "user")
+
+    useEffect(() => {
+        if (error) alert (error.message);
+    }, [error])
+
     return <form className='space-y-6 px-6 pb-4' onSubmit={handleLogin}>
             <h3 className='text-xl font-medium text-white'>Sign in to LeetClone</h3>
             <div>
