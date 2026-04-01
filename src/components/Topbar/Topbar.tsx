@@ -5,9 +5,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useSetRecoilState } from "recoil";
 import { authModalState } from "@/atoms/authModalAtom";
 import Image from "next/image";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { BsList } from "react-icons/bs";
-import { useRouter } from "next/router";
 import Logout from "../Buttons/Logout";
 
 
